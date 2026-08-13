@@ -9,14 +9,36 @@ services:
       - ./:/app
     depends_on:
       - worker
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:example@postgres:5432/upe
+      - REDIS_URL=redis://redis:6379/0
   worker:
     build: .
-    command: python cli.py run-exp --type arithmetic --n 10
+    command: celery -A pattern_engine.tasks.celery_app worker --loglevel=info
     volumes:
       - ./:/app
+    depends_on:
+      - redis
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:example@postgres:5432/upe
+      - REDIS_URL=redis://redis:6379/0
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
   postgres:
     image: postgres:15-alpine
     environment:
       POSTGRES_PASSWORD: example
+      POSTGRES_USER: postgres
+      POSTGRES_DB: upe
     ports:
       - "5432:5432"
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
