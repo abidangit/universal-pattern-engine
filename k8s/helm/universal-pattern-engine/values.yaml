@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: ghcr.io/abidangit/universal-pattern-engine
+  pullPolicy: IfNotPresent
+  tag: "latest"
+service:
+  type: ClusterIP
+  port: 8000

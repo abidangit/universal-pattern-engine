@@ -1,0 +1,6 @@
+site_name: Universal Pattern Engine
+nav:
+  - Home: index.md
+  - Architecture: docs/architecture.md
+  - Sequence Types: docs/sequence-types.md
+  - Pattern Detection: docs/pattern-detection.md
