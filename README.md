@@ -14,4 +14,23 @@ Quick start:
 - pytest
 - Run API: `python cli.py run-api --host 0.0.0.0 --port 8000`
 
-Roadmap: see docs/ for architecture and roadmap.
+Local validation checklist:
+
+- Install dependencies: `make install`
+- Run linters and formatting: `make lint` and `pre-commit run --all-files`
+- Run tests: `make test`
+- Type-check (optional): `make typecheck`
+- Build docs: `make docs`
+
+Secrets and CI requirements:
+
+See docs/ops/secrets.md for the list of GitHub repository secrets required to enable publishing, CI integrations, and runtime connections.
+
+Releases and publishing:
+
+- Tag a release: `git tag v0.1.0` then `git push --tags` to trigger release workflows that build images and publish to GHCR and PyPI (requires secrets configured).
+
+Contributing:
+
+See CONTRIBUTING.md for contribution guidelines and CODE_OF_CONDUCT.md for expected behavior.
+
