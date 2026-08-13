@@ -1,7 +1,7 @@
 .PHONY: install test docker-build lint typecheck docs build publish-pypi migrate
 
 install:
-	python -m pip install --upgrade pip && pip install -r requirements.txt
+	python -m pip install --upgrade pip && pip install -r requirements.txt && pip install -e .
 
 test:
 	pytest -q
