@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: upe-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: upe-api
+  template:
+    metadata:
+      labels:
+        app: upe-api
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/abidangit/universal-pattern-engine:latest
+          ports:
+            - containerPort: 8000

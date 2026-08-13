@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    command: python cli.py run-api --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    depends_on:
+      - worker
+  worker:
+    build: .
+    command: python cli.py run-exp --type arithmetic --n 10
+    volumes:
+      - ./:/app
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
