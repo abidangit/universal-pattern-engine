@@ -32,5 +32,17 @@ Releases and publishing:
 
 Contributing:
 
-See CONTRIBUTING.md for contribution guidelines and CODE_OF_CONDUCT.md for expected behavior.
+See CONTRIBUTING.md and docs/contributing-guide.md for contribution guidelines and CODE_OF_CONDUCT.md for expected behavior.
+
+Documentation site (MkDocs)
+- Built in CI and published to gh-pages. Browse the docs site after CI runs.
+
+Key docs
+- Concepts: docs/concepts.md
+- Developer Guide: docs/developer-guide.md
+- Contributing Guide: docs/contributing-guide.md
+- Deployment Guide: docs/deployment.md
+- API Reference: docs/api.md
+
+Get help: open an issue or contact the maintainers in MAINTAINERS.
 

@@ -2,5 +2,11 @@ site_name: Universal Pattern Engine
 nav:
   - Home: index.md
   - Architecture: docs/architecture.md
+  - Concepts: docs/concepts.md
   - Sequence Types: docs/sequence-types.md
   - Pattern Detection: docs/pattern-detection.md
+  - API: docs/api.md
+  - Developer Guide: docs/developer-guide.md
+  - Contributing: docs/contributing-guide.md
+  - Deployment: docs/deployment.md
+  - Release: docs/release.md
